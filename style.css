@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap');
+
+/* Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f5f5dc;
+}
+html.dark ::-webkit-scrollbar-track {
+    background: #121212;
+}
+::-webkit-scrollbar-thumb {
+    background: #800000;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #5a0000;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hover-zoom {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.hover-zoom:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+html.dark .hover-zoom:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Lightbox styles */
+.lightbox {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.lightbox.show {
+    display: flex;
+    opacity: 1;
+}
+
+/* Sticky Nav specific styles */
+#navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #1f2937; /* Tailwind gray-800 */
+}
+html.dark #navbar.scrolled {
+    background-color: rgba(30, 30, 30, 0.95);
+    color: #f3f4f6; /* Tailwind gray-100 */
+}
+
+/* Float Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+.floating {
+    animation: float 3s ease-in-out infinite;
+}

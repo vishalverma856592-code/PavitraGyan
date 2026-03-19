@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Study Library in Sitapur | Pavitra Gyan Library</title>
+    <meta name="description" content="24-hour study library in Sitapur with affordable pricing, peaceful environment, and modern facilities.">
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="keywords" content="study library, sitapur, pavitra gyan, 24 hour library, reading room">
+    <meta name="author" content="Pavitra Gyan Library">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: {
+                            DEFAULT: '#800000',
+                            dark: '#5a0000',
+                            light: '#a52a2a'
+                        },
+                        beige: {
+                            DEFAULT: '#f5f5dc',
+                            muted: '#e8e8cc',
+                            light: '#fafaf0'
+                        },
+                        dark: {
+                            DEFAULT: '#121212',
+                            card: '#1e1e1e',
+                            lighter: '#2a2a2a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-beige-light text-gray-800 dark:bg-dark dark:text-gray-200 transition-colors duration-300 font-sans antialiased selection:bg-maroon selection:text-white">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-40 transition-all duration-300 bg-transparent py-5 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer group" onclick="window.scrollTo(0,0)">
+                    <div class="w-10 h-10 rounded-full bg-maroon/20 backdrop-blur-sm flex items-center justify-center group-hover:bg-maroon/40 transition-colors">
+                        <i class="fa-solid fa-book-open-reader text-maroon-light text-xl"></i>
+                    </div>
+                    <span class="font-display font-bold text-2xl tracking-tight drop-shadow-md">Pavitra Gyan</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="font-medium hover:text-maroon-light transition-colors drop-shadow-sm">Home</a>
+                    <a href="#gallery" class="font-medium hover:text-maroon-light transition-colors drop-shadow-sm">Gallery</a>
+                    <a href="#about" class="font-medium hover:text-maroon-light transition-colors drop-shadow-sm">About</a>
+                    <a href="#features" class="font-medium hover:text-maroon-light transition-colors drop-shadow-sm">Features</a>
+                    <a href="#contact" class="font-medium hover:text-maroon-light transition-colors drop-shadow-sm">Contact</a>
+                    
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-white/20 dark:hover:bg-dark-lighter transition-colors" aria-label="Toggle Dark Mode">
+                        <i class="fa-solid fa-moon dark:hidden text-lg drop-shadow-sm"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-lg text-yellow-400"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-white/20 transition-colors">
+                        <i class="fa-solid fa-moon dark:hidden text-lg drop-shadow-sm"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-lg text-yellow-400"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="hover:text-maroon-light focus:outline-none transition-colors">
+                        <i class="fa-solid fa-bars text-2xl drop-shadow-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-dark-card shadow-xl absolute w-full left-0 top-full flex-col border-t border-gray-100 dark:border-gray-800">
+            <div class="px-4 py-4 space-y-2 text-gray-800 dark:text-gray-200">
+                <a href="#home" class="block px-4 py-3 rounded-lg font-medium hover:bg-beige focus:bg-beige dark:hover:bg-dark-lighter dark:focus:bg-dark-lighter hover:text-maroon transition-colors"><i class="fa-solid fa-house w-6"></i> Home</a>
+                <a href="#gallery" class="block px-4 py-3 rounded-lg font-medium hover:bg-beige focus:bg-beige dark:hover:bg-dark-lighter dark:focus:bg-dark-lighter hover:text-maroon transition-colors"><i class="fa-solid fa-images w-6"></i> Gallery</a>
+                <a href="#about" class="block px-4 py-3 rounded-lg font-medium hover:bg-beige focus:bg-beige dark:hover:bg-dark-lighter dark:focus:bg-dark-lighter hover:text-maroon transition-colors"><i class="fa-solid fa-circle-info w-6"></i> About</a>
+                <a href="#features" class="block px-4 py-3 rounded-lg font-medium hover:bg-beige focus:bg-beige dark:hover:bg-dark-lighter dark:focus:bg-dark-lighter hover:text-maroon transition-colors"><i class="fa-solid fa-star w-6"></i> Features</a>
+                <a href="#contact" class="block px-4 py-3 rounded-lg font-medium hover:bg-beige focus:bg-beige dark:hover:bg-dark-lighter dark:focus:bg-dark-lighter hover:text-maroon transition-colors"><i class="fa-solid fa-envelope w-6"></i> Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO SECTION -->
+    <section id="home" class="relative inset-0 h-[100dvh] flex items-center justify-center pt-16 overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="1.webp.png" alt="Library Study Environment" class="w-full h-full object-cover">
+            <!-- Maroon Tint Overlay -->
+            <div class="absolute inset-0 bg-maroon/70 mix-blend-multiply dark:bg-dark/80 transition-colors duration-300"></div>
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white w-full">
+            <h1 class="font-display font-bold tracking-tight text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-6 fade-in drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)]">
+                Welcome to <br class="block md:hidden"> <span class="text-beige-light underline decoration-maroon-light underline-offset-8">Pavitra Gyan</span> Library
+            </h1>
+            <p class="mt-4 text-2xl sm:text-3xl font-light mb-8 max-w-2xl mx-auto fade-in drop-shadow-md text-beige" style="transition-delay: 200ms;">
+                "Where Focus Meets Success"
+            </p>
+            <p class="mt-6 text-lg md:text-xl font-normal mb-10 max-w-3xl mx-auto fade-in leading-relaxed text-gray-100" style="transition-delay: 400ms;">
+                A dedicated study environment designed to help you achieve academic excellence with comfort and discipline.
+            </p>
+            <div class="mt-10 flex justify-center gap-4 fade-in" style="transition-delay: 600ms;">
+                <a href="#about" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium rounded-full text-maroon-dark bg-beige-light hover:bg-white transition-all shadow-[0_0_20px_rgba(245,245,220,0.3)] hover:shadow-[0_0_30px_rgba(245,245,220,0.5)] hover:-translate-y-1 duration-300 gap-3 group">
+                    Explore More <i class="fa-solid fa-arrow-down group-hover:animate-bounce"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Bottom Curve Decor -->
+        <div class="absolute bottom-0 left-0 right-0 z-10">
+            <svg viewBox="0 0 1440 120" class="w-full text-beige-light dark:text-dark fill-current transition-colors duration-300 preserve-3d" preserveAspectRatio="none">
+                <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- SECTION 2: GALLERY -->
+    <section id="gallery" class="py-24 bg-beige-light dark:bg-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <span class="text-maroon font-semibold tracking-wider uppercase text-sm mb-2 block">Our Space</span>
+                <h2 class="font-display font-bold text-4xl md:text-5xl text-gray-900 dark:text-white">Gallery</h2>
+                <div class="w-24 h-1 bg-maroon mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-in" style="transition-delay: 200ms;">
+                <!-- Items -->
+                <div class="gallery-item group relative aspect-[4/3] overflow-hidden rounded-2xl cursor-pointer hover-zoom shadow-md border border-gray-100 dark:border-gray-800">
+                    <img src="2.webp.png" alt="Library Interior 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-maroon/0 group-hover:bg-maroon/40 transition-colors duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover:opacity-100 text-4xl transform scale-50 group-hover:scale-100 transition-all duration-300"></i>
+                    </div>
+                </div>
+                <div class="gallery-item group relative aspect-[4/3] overflow-hidden rounded-2xl cursor-pointer hover-zoom shadow-md border border-gray-100 dark:border-gray-800">
+                    <img src="3.webp.png" alt="Library Interior 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-maroon/0 group-hover:bg-maroon/40 transition-colors duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover:opacity-100 text-4xl transform scale-50 group-hover:scale-100 transition-all duration-300"></i>
+                    </div>
+                </div>
+                <div class="gallery-item group relative aspect-[4/3] overflow-hidden rounded-2xl cursor-pointer hover-zoom shadow-md border border-gray-100 dark:border-gray-800">
+                    <img src="4.webp.png" alt="Library Environment 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-maroon/0 group-hover:bg-maroon/40 transition-colors duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover:opacity-100 text-4xl transform scale-50 group-hover:scale-100 transition-all duration-300"></i>
+                    </div>
+                </div>
+                <div class="gallery-item group relative aspect-[4/3] overflow-hidden rounded-2xl cursor-pointer hover-zoom shadow-md border border-gray-100 dark:border-gray-800">
+                    <img src="5.webp.png" alt="Library Environment 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-maroon/0 group-hover:bg-maroon/40 transition-colors duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover:opacity-100 text-4xl transform scale-50 group-hover:scale-100 transition-all duration-300"></i>
+                    </div>
+                </div>
+                <div class="gallery-item group relative aspect-[4/3] overflow-hidden rounded-2xl cursor-pointer hover-zoom shadow-md border border-gray-100 dark:border-gray-800">
+                    <img src="6.webp.png" alt="Study Desks" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-maroon/0 group-hover:bg-maroon/40 transition-colors duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover:opacity-100 text-4xl transform scale-50 group-hover:scale-100 transition-all duration-300"></i>
+                    </div>
+                </div>
+                <div class="gallery-item group relative aspect-[4/3] overflow-hidden rounded-2xl cursor-pointer hover-zoom shadow-md border border-gray-100 dark:border-gray-800">
+                    <img src="7.webp.png" alt="Study Desks 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-maroon/0 group-hover:bg-maroon/40 transition-colors duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass-plus text-white opacity-0 group-hover:opacity-100 text-4xl transform scale-50 group-hover:scale-100 transition-all duration-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: ABOUT US -->
+    <section id="about" class="py-24 bg-beige dark:bg-dark-card relative overflow-hidden">
+        <!-- Decor Blob -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-maroon/5 rounded-full blur-3xl point-events-none"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-maroon/5 rounded-full blur-3xl point-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Left Side -->
+                <div class="fade-in">
+                    <span class="text-maroon font-semibold tracking-wider uppercase text-sm mb-2 block">Discover</span>
+                    <h2 class="font-display font-bold text-4xl md:text-5xl text-gray-900 dark:text-white mb-6">About Us</h2>
+                    <div class="w-20 h-1 bg-maroon mb-10 rounded-full"></div>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 font-light italic border-l-4 border-maroon pl-4">
+                        "Empowering minds through a focused and dedicated environment."
+                    </p>
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full text-white bg-maroon hover:bg-maroon-dark transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 duration-300 gap-2">
+                        Read More <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Right Side -->
+                <div class="fade-in" style="transition-delay: 200ms;">
+                    <div class="bg-white dark:bg-dark-lighter p-8 md:p-10 rounded-3xl shadow-xl border border-beige-muted dark:border-gray-800 relative">
+                        <!-- Format Icon -->
+                        <i class="fa-solid fa-quote-left absolute top-6 right-8 text-5xl text-maroon/10 dark:text-gray-100/5"></i>
+                        
+                        <div class="space-y-6 text-gray-600 dark:text-gray-300 text-lg leading-relaxed relative z-10">
+                            <p>
+                                <strong class="text-maroon dark:text-maroon-light font-semibold">Pavitra Gyan Library</strong> is committed to providing a peaceful and productive study environment for students and professionals. Located in Sitapur, our library offers a distraction-free atmosphere, comfortable seating, and modern amenities to support focused learning.
+                            </p>
+                            <p>
+                                With <strong>3 years of excellence</strong>, we have built a trusted space where individuals can prepare for exams, complete assignments, and enhance productivity.
+                            </p>
+                            <p>
+                                Our services are designed to be affordable, accessible, and effective for everyone.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: FEATURES / HIGHLIGHTS -->
+    <section id="features" class="py-24 bg-beige-light dark:bg-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <span class="text-maroon font-semibold tracking-wider uppercase text-sm mb-2 block">Why Choose Us</span>
+                <h2 class="font-display font-bold text-4xl md:text-5xl text-gray-900 dark:text-white">Our Highlights</h2>
+                <div class="w-24 h-1 bg-maroon mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Feature Card 1 -->
+                <div class="bg-white dark:bg-dark-card p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-beige-muted dark:border-gray-800 group fade-in">
+                    <div class="w-16 h-16 bg-beige dark:bg-dark-lighter rounded-2xl flex items-center justify-center text-maroon mb-6 group-hover:bg-maroon group-hover:text-white transition-colors duration-300">
+                        <i class="fa-regular fa-clock text-2xl"></i>
+                    </div>
+                    <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3">Open 24 Hours</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Study at your own pace, anytime. Our doors are open 24/7 for absolute convenience.</p>
+                </div>
+
+                <!-- Feature Card 2 -->
+                <div class="bg-white dark:bg-dark-card p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-beige-muted dark:border-gray-800 group fade-in" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 bg-beige dark:bg-dark-lighter rounded-2xl flex items-center justify-center text-maroon mb-6 group-hover:bg-maroon group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-award text-2xl"></i>
+                    </div>
+                    <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3">3 Years in Business</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Successfully supporting students with a legacy of excellence and trust in Sitapur.</p>
+                </div>
+
+                <!-- Feature Card 3 -->
+                <div class="bg-white dark:bg-dark-card p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-beige-muted dark:border-gray-800 group fade-in" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 bg-beige dark:bg-dark-lighter rounded-2xl flex items-center justify-center text-maroon mb-6 group-hover:bg-maroon group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-tags text-2xl"></i>
+                    </div>
+                    <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3">Reasonably Priced</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Premium facilities offered at competitive, student-friendly prices.</p>
+                </div>
+
+                <!-- Feature Card 4 -->
+                <div class="bg-white dark:bg-dark-card p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-beige-muted dark:border-gray-800 group fade-in" style="transition-delay: 300ms;">
+                    <div class="w-16 h-16 bg-beige dark:bg-dark-lighter rounded-2xl flex items-center justify-center text-maroon mb-6 group-hover:bg-maroon group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-wifi text-2xl"></i>
+                    </div>
+                    <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3">Offline & Online</h3>
+                    <p class="text-gray-600 dark:text-gray-400">High-speed internet for online preparation alongside offline study materials.</p>
+                </div>
+
+                <!-- Feature Card 5 -->
+                <div class="bg-white dark:bg-dark-card p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-beige-muted dark:border-gray-800 group fade-in" style="transition-delay: 400ms;">
+                    <div class="w-16 h-16 bg-beige dark:bg-dark-lighter rounded-2xl flex items-center justify-center text-maroon mb-6 group-hover:bg-maroon group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-headset text-2xl"></i>
+                    </div>
+                    <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3">Support Services</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Dedicated staff available to ensure your study sessions run smoothly.</p>
+                </div>
+
+                <!-- Feature Card 6 -->
+                <div class="bg-white dark:bg-dark-card p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-beige-muted dark:border-gray-800 group fade-in" style="transition-delay: 500ms;">
+                    <div class="w-16 h-16 bg-beige dark:bg-dark-lighter rounded-2xl flex items-center justify-center text-maroon mb-6 group-hover:bg-maroon group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-door-open text-2xl"></i>
+                    </div>
+                    <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3">24 Hour Access</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Secure entry and well-lit environments for late-night dedicated scholars.</p>
+                </div>
+
+                <!-- Feature Card 7 -->
+                <div class="bg-white dark:bg-dark-card p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-beige-muted dark:border-gray-800 group fade-in lg:col-span-2" style="transition-delay: 600ms;">
+                    <div class="flex items-start gap-6">
+                        <div class="w-16 h-16 flex-shrink-0 bg-beige dark:bg-dark-lighter rounded-2xl flex items-center justify-center text-maroon group-hover:bg-maroon group-hover:text-white transition-colors duration-300">
+                            <i class="fa-solid fa-children text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-semibold text-xl text-gray-900 dark:text-white mb-3 mt-1">Children Friendly Environment</h3>
+                            <p class="text-gray-600 dark:text-gray-400 max-w-lg">A safe, quiet, and inspiring space catered towards young minds looking to focus and build healthy study habits early on.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-beige dark:bg-dark-card border-t border-maroon/10 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <span class="text-maroon font-semibold tracking-wider uppercase text-sm mb-2 block">Get in Touch</span>
+                <h2 class="font-display font-bold text-4xl md:text-5xl text-gray-900 dark:text-white">Contact Us</h2>
+                <div class="w-24 h-1 bg-maroon mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                
+                <!-- Contact Info Columns -->
+                <div class="lg:col-span-1 space-y-8">
+                    <!-- Address -->
+                    <div class="flex items-start gap-4 fade-in">
+                        <div class="w-12 h-12 bg-white dark:bg-dark-lighter rounded-full flex items-center justify-center text-maroon flex-shrink-0 shadow-sm border border-gray-100 dark:border-gray-800">
+                            <i class="fa-solid fa-location-dot text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-display font-semibold text-lg text-gray-900 dark:text-white mb-2">Address</h4>
+                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Pavitra Gyan Library<br>
+                                Pavitra Gyan, Hardoi Chungi Shyam Nath Road<br>
+                                Petha Wali Gali, Hempurwa<br>
+                                Sitapur - 261001, Uttar Pradesh
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="flex items-start gap-4 fade-in" style="transition-delay: 100ms;">
+                        <div class="w-12 h-12 bg-white dark:bg-dark-lighter rounded-full flex items-center justify-center text-maroon flex-shrink-0 shadow-sm border border-gray-100 dark:border-gray-800">
+                            <i class="fa-solid fa-phone text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-display font-semibold text-lg text-gray-900 dark:text-white mb-2">Contact Info</h4>
+                            <p class="text-gray-600 dark:text-gray-400">
+                                Phone: <a href="tel:+910000000000" class="hover:text-maroon transition-colors">+91 [Add Placeholder]</a><br>
+                                Email: <a href="mailto:info@pavitragyan.com" class="hover:text-maroon transition-colors">info@pavitragyan.com</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Hours -->
+                    <div class="flex items-start gap-4 fade-in" style="transition-delay: 200ms;">
+                        <div class="w-12 h-12 bg-white dark:bg-dark-lighter rounded-full flex items-center justify-center text-maroon flex-shrink-0 shadow-sm border border-gray-100 dark:border-gray-800">
+                            <i class="fa-solid fa-clock text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-display font-semibold text-lg text-gray-900 dark:text-white mb-2">Opening Hours</h4>
+                            <p class="text-gray-600 dark:text-gray-400 font-medium">
+                                Open 24 Hours (All Days)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-2 fade-in" style="transition-delay: 300ms;">
+                    <div class="bg-white dark:bg-dark-lighter p-8 rounded-3xl shadow-xl border border-beige-muted dark:border-gray-800">
+                        <h3 class="font-display text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Send Us a Message</h3>
+                        <form id="contact-form" action="contact.php" method="POST" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Full Name</label>
+                                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-dark border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-maroon focus:border-transparent outline-none transition-all dark:text-white text-gray-900" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-dark border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-maroon focus:border-transparent outline-none transition-all dark:text-white text-gray-900" placeholder="+91 XXXXXXXXXX">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-dark border border-gray-200 dark:border-gray-700 focus:ring-2 focus:ring-maroon focus:border-transparent outline-none transition-all resize-none dark:text-white text-gray-900" placeholder="How can we help you?"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 px-6 bg-maroon hover:bg-maroon-dark text-white font-medium rounded-lg transition-colors duration-300 shadow-md flex items-center justify-center gap-2">
+                                Send Message <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: GOOGLE MAP -->
+    <section class="w-full bg-beige-light dark:bg-dark h-[400px] relative z-0">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.5814246752066!2d80.66184557446716!3d27.57549823129622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399ed71730fd01f7%3A0xe2be8b1c9faad175!2sPavitra%20Gyan%20Library!5e0!3m2!1sen!2sin!4v1773941410123!5m2!1sen!2sin"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="grayscale hover:grayscale-0 transition-all duration-700 filter dark:opacity-80"></iframe>
+    </section>
+
+    <!-- SECTION 7: FOOTER -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8 border-t-4 border-maroon">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="space-y-5">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-book-open-reader text-maroon-light text-3xl"></i>
+                        <span class="font-display font-bold text-2xl tracking-tight">Pavitra Gyan</span>
+                    </div>
+                    <p class="text-gray-400 font-light max-w-sm">
+                        Where Focus Meets Success. A premium, distraction-free environment for students and professionals.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-display font-semibold text-lg mb-6 border-b border-gray-700 pb-2 inline-block">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#home" class="hover:text-maroon-light transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Home</a></li>
+                        <li><a href="#about" class="hover:text-maroon-light transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> About Us</a></li>
+                        <li><a href="#features" class="hover:text-maroon-light transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Features</a></li>
+                        <li><a href="#contact" class="hover:text-maroon-light transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Address & Socials -->
+                <div>
+                    <h4 class="font-display font-semibold text-lg mb-6 border-b border-gray-700 pb-2 inline-block">Connect With Us</h4>
+                    <address class="not-italic text-gray-400 space-y-2 mb-6 text-sm">
+                        <p>Pavitra Gyan, Shyam Nath Road</p>
+                        <p>Hempurwa, Sitapur - 261001, UP</p>
+                    </address>
+                    <div class="flex gap-4">
+                        <a href="https://wa.me/910000000000" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#25D366] transition-colors" aria-label="WhatsApp">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#E1306C] transition-colors" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#1877F2] transition-colors" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-[#1DA1F2] transition-colors" aria-label="Twitter">
+                            <i class="fa-brands fa-twitter text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 Pavitra Gyan Library. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/910000000000" target="_blank" class="fixed bottom-6 left-6 z-50 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 floating group" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl group-hover:animate-pulse"></i>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top-btn" class="fixed bottom-6 right-6 z-50 w-12 h-12 bg-maroon text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:bg-maroon-dark transition-all duration-300 opacity-0 pointer-events-none" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up text-xl"></i>
+    </button>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox fixed inset-0 z-[60] bg-black/95 backdrop-blur-sm items-center justify-center p-4">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white text-4xl font-light transition-colors w-12 h-12 flex items-center justify-center rounded-full hover:bg-white/10">&times;</button>
+        <div class="relative w-full max-w-5xl max-h-[90vh] flex items-center justify-center">
+            <img id="lightbox-img" src="" alt="Gallery Preview" class="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl">
+        </div>
+    </div>
+
+    <!-- Script Application -->
+    <script src="script.js"></script>
+</body>
+</html>
